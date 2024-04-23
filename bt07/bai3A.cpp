@@ -1,21 +1,20 @@
+// bai3A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
 #include <iostream>
 using namespace std;
 
-int count_even(int* a, int n) {
-    int count = 0;
-    for (int i = 0; i < n; i++) {
-        if (a[i] % 2 == 0) {
-            count++;
-        }
-    }
-    return count;
-    
-}
 int main()
 {
-    int a[] = { 1,2,3,4,5,6,7,8,9,10};
-    int size = sizeof(a) / sizeof(int);
-    cout << count_even(a, size - 5) << endl;
-    cout << count_even(a + 5, size - 5) << endl;
+    char* a = new char[10];
+    char* c = a + 3;
+    for (int i = 0; i < 9; i++) a[i] = 'a';
+    a[9] = '\0';
+    cerr << "a: " << "-" << a << "-" << endl;//out:-aaaaaaaaa-
+    cerr << "c: " << "-" << c << "-" << endl;//out:-aaaaaa-
+    //delete c;
+    cerr << "a after deleting c:" << "-" << a << "-" << endl;
 }
+//lenh cerr thu 3 chay khong nhu mong muon.
+// delete c gay ra loi vi gia tri cua toan hang cua toan tu delete phai la
+// gia tri con tro thu tu 1 bieu thuc new array truoc do. neu khong thi ko xac dinh
